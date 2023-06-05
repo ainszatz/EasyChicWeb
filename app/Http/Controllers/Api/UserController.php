@@ -19,7 +19,11 @@ class UserController extends Controller
                 'These credentials do not match our records.'
             ], 404);
         }
-        return $user;
+
+        $message = "Welcome back, " . $user->name . "!";
+
+        return response()->json(['message' => $message, 'user' => $user], 200);
+
     }
    
     public function register(Request $request)
@@ -37,9 +41,13 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email, 
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'photo' => $request->photo ?? null,
+            'phone_number' => $request->phone_number ?? null,
+            'image' => $request->image ?? null,
         ]);
-        return response()->json(['message' => 'Registration successful', 'user' => $user], 200);
+        $message = "Welcome, " . $user->name . "! Registration successful";
 
+        return response()->json(['message' => $message, 'user' => $user], 200);
     }
 }

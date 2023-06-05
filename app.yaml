@@ -1,0 +1,22 @@
+runtime: php  
+env: flex     
+runtime_config:
+ document_root: public   
+
+skip_files:
+ - .env 
+env_variables:
+ .
+ APP_ENV: local   
+ APP_DEBUG : true 
+ APP_KEY: base64:vwCShSDOqzCIw1qqaBBr1lk6aRHBG6hjZ62wmx3jtn8=
+
+ CACHE_DRIVER: database
+
+ SESSION_DRIVER: database 
+
+ DB_CONNECTION: mysql
+ DB_HOST: 104.155.128.109
+ DB_DATABASE: easychic_db
+ DB_USERNAME: root
+ DB_PASSWORD: 1234

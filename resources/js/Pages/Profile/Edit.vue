@@ -3,7 +3,10 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import DeleteUserForm from './Partials/DeleteUserForm.vue';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
+import UpdateProfilePictureForm from './Partials/UpdateProfilePictureForm.vue';
 import { Head } from '@inertiajs/vue3';
+
+
 
 defineProps({
     mustVerifyEmail: {
